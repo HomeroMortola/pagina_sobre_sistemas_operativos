@@ -152,5 +152,5 @@ body{
 /* RESPONSIVO */
 @media (max-width: 560px){
   .grid{ gap: 12px; }
-  .card{ min-height: 250px; padding-bottom: 82px; }
+  .card{ min-height: 250px; padding-bottom:82px;}
 }
