@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Software & Sistemas Operativos — sin JS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- CONTENEDOR SCROLL-SNAP -->
+  <main class="snap-container">
+
+    <!-- SECCIÓN 1 -->
+    <section id="sec-1" class="snap-section">
+      <header class="section-head">
+        <h1>Tipos de Software</h1>
+        <p>De sistema, de aplicación, de desarrollo y otras categorías por uso.</p>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Software de sistema</h3>
+          <p class="muted">Administra el hardware y sirve de base.</p>
+          <ul>
+            <li>Sistema operativo</li>
+            <li>Controladores</li>
+            <li>Utilidades</li>
+          </ul>
+          <div class="reveal">
+            <p><strong>Ejemplos:</strong> Windows, Linux, macOS, drivers GPU.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Software de aplicación</h3>
+          <p class="muted">Resuelve tareas del usuario.</p>
+          <ul>
+            <li>Ofimática, navegador</li>
+            <li>Multimedia, juegos</li>
+          </ul>
+          <div class="reveal">
+            <p><strong>Ejemplos:</strong> Word, Chrome, VLC, Steam.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Software de desarrollo</h3>
+          <p class="muted">Crea y mantiene programas.</p>
+          <ul>
+            <li>Compiladores</li>
+            <li>IDEs y depuradores</li>
+            <li>Control de versiones</li>
+          </ul>
+          <div class="reveal">
+            <p><strong>Ejemplos:</strong> GCC, JDK, VS Code, Git.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Otros (por uso)</h3>
+          <p class="muted">Enfocados en funciones específicas.</p>
+          <ul>
+            <li>Seguridad</li>
+            <li>Middleware</li>
+            <li>Entretenimiento</li>
+          </ul>
+          <div class="reveal">
+            <p><strong>Ejemplos:</strong> Antivirus, Kafka, Unreal.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="nav-arrows">
+        <a class="btn-link" href="#sec-2">Siguiente sección ↓</a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2 -->
+    <section id="sec-2" class="snap-section">
+      <header class="section-head">
+        <h1>¿Qué es un Sistema Operativo?</h1>
+        <p>Intermediario entre hardware y aplicaciones; gestiona CPU, memoria, E/S y archivos.</p>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Funciones clave</h3>
+          <ul>
+            <li>Gestión de procesos</li>
+            <li>Gestión de memoria</li>
+            <li>E/S y sistema de archivos</li>
+            <li>Seguridad y servicios</li>
+          </ul>
+          <div class="reveal">
+            <p>Planifica CPU, protege memoria y controla dispositivos/permisos.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Interfaces</h3>
+          <ul>
+            <li>Línea de comandos</li>
+            <li>GUI (ventanas)</li>
+            <li>APIs del sistema</li>
+          </ul>
+          <div class="reveal">
+            <p>Facilita que los programas usen recursos del sistema.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Objetivos</h3>
+          <ul>
+            <li>Eficiencia</li>
+            <li>Confiabilidad</li>
+            <li>Seguridad</li>
+          </ul>
+          <div class="reveal">
+            <p>Equilibrio entre rendimiento, protección y usabilidad.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="nav-arrows">
+        <a class="btn-link" href="#sec-1">↑ Anterior</a>
+        <a class="btn-link" href="#sec-3">Siguiente ↓</a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3 -->
+    <section id="sec-3" class="snap-section">
+      <header class="section-head">
+        <h1>Tipos de Sistemas Operativos</h1>
+        <p>Clasificación para entender su uso y alcance.</p>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Monotarea / Multitarea</h3>
+          <p class="muted">Un proceso vs. varios (time-sharing).</p>
+          <div class="reveal">
+            <p><strong>Ej:</strong> MS-DOS (mono); Windows/Linux (multi).</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Monousuario / Multiusuario</h3>
+          <p class="muted">Un usuario vs. concurrentes.</p>
+          <div class="reveal">
+            <p><strong>Ej:</strong> Unix/Linux en servidores (multiusuario).</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Tiempo real (RTOS)</h3>
+          <p class="muted">Respuestas determinísticas.</p>
+          <div class="reveal">
+            <p><strong>Ej:</strong> FreeRTOS, QNX, VxWorks.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Red / Distribuidos</h3>
+          <p class="muted">Compartir recursos / coordinar nodos.</p>
+          <div class="reveal">
+            <p><strong>Ej:</strong> Clusters, diseños distribuidos.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>General / Específico</h3>
+          <p class="muted">PC/servidor/móvil vs. embebidos/IoT.</p>
+          <div class="reveal">
+            <p><strong>Ej:</strong> Windows, Linux / OpenWrt, RTOS MCU.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="nav-arrows">
+        <a class="btn-link" href="#sec-2">↑ Anterior</a>
+        <a class="btn-link" href="#sec-4">Siguiente ↓</a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4 -->
+    <section id="sec-4" class="snap-section">
+      <header class="section-head">
+        <h1>Principios de Diseño (SO)</h1>
+        <p>Eficiencia, confiabilidad, seguridad, modularidad, portabilidad y escalabilidad.</p>
+      </header>
+
+      <div class="grid onecol">
+        <article class="card">
+          <h3>Resumen</h3>
+          <p>
+            Un buen SO equilibra rendimiento y protección, con componentes modulares
+            para mantenimiento y crecimiento.
+          </p>
+          <div class="reveal">
+            <p class="muted">Síntesis guiada por Stallings.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="nav-arrows">
+        <a class="btn-link" href="#sec-3">↑ Anterior</a>
+        <a class="btn-link" href="#sec-5">Bibliografía ↓</a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: BIBLIO -->
+    <section id="sec-5" class="snap-section">
+      <header class="section-head">
+        <h1>Bibliografía</h1>
+        <p>Fuente principal de la teoría presentada.</p>
+      </header>
+
+      <div class="grid onecol">
+        <article class="card biblio">
+          <h3>Referencia</h3>
+          <p>
+            Stallings, William. <em>Sistemas Operativos: Aspectos internos y principios de diseño</em>.
+            5ª edición. Prentice Hall.
+          </p>
+          <p class="muted small">
+            Clasificación de software, definición y tipos de sistemas operativos, y principios de diseño:
+            síntesis basada en la organización y enfoques del libro de Stallings.
+          </p>
+        </article>
+      </div>
+
+      <div class="nav-arrows">
+        <a class="btn-link" href="#sec-4">↑ Volver</a>
+        <a class="btn-link" href="#sec-1">Ir al inicio ↑</a>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

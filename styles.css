@@ -1,0 +1,156 @@
+:root{
+  --bg:#0f172a;
+  --bg-2:#0b1224;
+  --card:#101b35;
+  --text:#e6e7ee;
+  --muted:#b6bdd0;
+  --accent:#60a5fa;
+  --accent-2:#34d399;
+  --ring:0 14px 32px -12px rgba(96,165,250,.35);
+  --maxw:1180px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -20%, rgba(96,165,250,.12), transparent 60%),
+    radial-gradient(1200px 600px at 90% -20%, rgba(52,211,153,.12), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+  line-height:1.6;
+  overflow: hidden; /* el scroll lo maneja .snap-container */
+}
+
+/* SCROLL-SNAP */
+.snap-container{
+  height:100vh;
+  overflow-y:auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior:smooth;
+}
+.snap-section{
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding: 36px 16px 28px;
+}
+
+/* CABECERAS GRANDES */
+.section-head{
+  max-width: var(--maxw);
+  margin: 0 auto 18px;
+  padding: 0 8px;
+  text-align: center;
+}
+.section-head h1{
+  margin:0;
+  font-size: clamp(30px, 5.4vw, 60px);
+  letter-spacing: .2px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+.section-head p{
+  margin:8px auto 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+/* GRID + CARDS */
+.grid{
+  max-width: var(--maxw);
+  margin: 8px auto 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 0 8px;
+}
+.grid.onecol{ grid-template-columns: minmax(320px, 820px); justify-content:center; }
+
+.card{
+  position:relative;
+  background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.10);
+  border-radius: 20px;
+  padding: 18px 18px 86px;     /* espacio inferior mayor para la barra */
+  min-height: 270px;
+  transition: transform .18s ease, border-color .2s ease, box-shadow .2s ease, background .2s ease, filter .2s ease;
+  will-change: transform;
+}
+.card:hover{
+  border-color: rgba(255,255,255,.22);
+  box-shadow: var(--ring);
+  background: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.03));
+  transform: translateY(-3px);
+  filter: saturate(1.05);
+}
+
+/* NUEVA BARRA “PÍLDORA” (no rectangular) */
+.card::after{
+  content:"";
+  position:absolute; left:18px; right:18px; bottom:14px; height:8px; /* ↑ bordes redondos y separada de los bordes */
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 18px rgba(96,165,250,.35);  /* glow suave */
+  transform: scaleX(.25);
+  transform-origin: left;
+  transition: transform .28s ease;
+  opacity: .95;
+}
+.card::before{
+  /* halo muy leve para más suavidad */
+  content:"";
+  position:absolute; left:18px; right:18px; bottom:14px; height:8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(96,165,250,.22), rgba(52,211,153,.22));
+  filter: blur(6px);
+  opacity: .7;
+  transform: scaleX(.25);
+  transform-origin: left;
+  transition: transform .28s ease;
+}
+.card:hover::after,
+.card:hover::before{ transform: scaleX(1); }
+
+.card h3{ margin: 4px 0 8px; font-size: clamp(18px, 2.6vw, 22px); }
+.card .muted{ color: var(--muted); margin: 6px 0 10px; }
+.card ul{ margin: 8px 0; padding-left: 18px; }
+
+/* REVEAL */
+.reveal{
+  position: absolute; left: 0; right: 0; bottom: 28px; /* ↑ para no chocar con la píldora */
+  padding: 12px 18px 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.22));
+  transform: translateY(36px);
+  opacity: 0;
+  transition: transform .22s ease, opacity .22s ease;
+  font-size: 15px; color: #eef3ff;
+  pointer-events: none;
+}
+.card:hover .reveal{ transform: translateY(0); opacity: 1; }
+
+/* NAVEGACIÓN */
+.nav-arrows{ margin: 16px auto 0; text-align:center; }
+.btn-link{
+  display:inline-block;
+  margin: 6px 6px 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border:1px solid rgba(255,255,255,.15);
+  color: var(--text);
+  text-decoration:none;
+  background: rgba(255,255,255,.05);
+}
+.btn-link:hover{ border-color: rgba(255,255,255,.35); }
+
+/* BIBLIO */
+.biblio .small{ font-size: 14px; }
+
+/* RESPONSIVO */
+@media (max-width: 560px){
+  .grid{ gap: 12px; }
+  .card{ min-height: 250px; padding-bottom: 82px; }
+}
