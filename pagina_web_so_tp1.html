@@ -144,7 +144,8 @@
       <div class="grid">
         <article class="card">
           <h3>Monotarea / Multitarea</h3>
-          <p class="muted">Un proceso vs. varios (time-sharing).</p>
+          <li>Monotarea: <span class="muted">solo permite ejecutar un programa a la vez.</span></li>
+          <li>Multitarea: <span class="muted">permite ejecutar varios programas en paralelo, compartiendo CPU y memoria mediante técnicas como la multiprogramación y planificación de procesos.</span></li>
           <div class="reveal">
             <p><strong>Ej:</strong> MS-DOS (mono); Windows/Linux (multi).</p>
           </div>
@@ -152,7 +153,8 @@
 
         <article class="card">
           <h3>Monousuario / Multiusuario</h3>
-          <p class="muted">Un usuario vs. concurrentes.</p>
+          <li>Monousuario: <span class="muted">el sistema solo atiende a un usuario a la vez, aunque pueda ejecutar múltiples tareas.</span></li>
+          <li>Multiusuario: <span class="muted">permite que varios usuarios accedan y trabajen al mismo tiempo en el mismo sistema, cada uno con sus permisos y procesos aislados.</span></li>
           <div class="reveal">
             <p><strong>Ej:</strong> Unix/Linux en servidores (multiusuario).</p>
           </div>
@@ -160,15 +162,19 @@
 
         <article class="card">
           <h3>Tiempo real (RTOS)</h3>
-          <p class="muted">Respuestas determinísticas.</p>
+
+          <li>Se caracterizan: <span class="muted">porque la corrección depende tanto del resultado como del momento en que se entrega.</span></li>
+          <li>Tiempo real duro: <span class="muted">si se incumple el plazo → fallo crítico.</span></li>
+          <li>Tiempo real blando: <span class="muted">si se incumple, el sistema sigue siendo útil, aunque con menor calidad.</span></li>
           <div class="reveal">
-            <p><strong>Ej:</strong> FreeRTOS, QNX, VxWorks.</p>
+            <p><strong>Ej:</strong> VxWorks/Unity.</p>
           </div>
         </article>
 
         <article class="card">
           <h3>Red / Distribuidos</h3>
-          <p class="muted">Compartir recursos / coordinar nodos.</p>
+          <li>Sistemas Operativos de Red: <span class="muted">consiste sistemas operativos que permiten la comunicación con otros.</span></li>
+          <li>Tiempo real blando: <span class="muted">coordina múltiples computadoras para que se comporten como un solo sistema lógico.</span></li>
           <div class="reveal">
             <p><strong>Ej:</strong> Clusters, diseños distribuidos.</p>
           </div>
@@ -176,7 +182,8 @@
 
         <article class="card">
           <h3>General / Específico</h3>
-          <p class="muted">PC/servidor/móvil vs. embebidos/IoT.</p>
+          <li>De propósito general: <span class="muted">diseñados para atender una gran variedad de aplicaciones y usuarios.</span></li>
+          <li>De propósito específico: <span class="muted">creados para una tarea concreta, optimizando recursos y rendimiento.</span></li>
           <div class="reveal">
             <p><strong>Ej:</strong> Windows, Linux / OpenWrt, RTOS MCU.</p>
           </div>
